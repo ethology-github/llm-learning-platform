@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "chrome-devtools": {
+      "command": "node",
+      "args": ["D:\\ollama_models\\llm-universe-main\\node_modules\\chrome-devtools-mcp\\build\\src\\index.js"],
+      "env": {}
+    }
+  }
+}
