@@ -378,14 +378,12 @@ def main(initial_chapter=None, initial_file=None):
 
     # Handle initial chapter/file from home page (only process once)
     navigation_key = 'navigation_processed'
-    if initial_chapter and initial_chapter in chapters and navigation_key not in st.session_state:
+    if initial_chapter and initial_chapter in chapters:
         st.session_state['selected_chapter'] = initial_chapter
         if initial_file and initial_file in COURSE_STRUCTURE[initial_chapter]:
             st.session_state['selected_file'] = initial_file
         else:
             st.session_state['selected_file'] = COURSE_STRUCTURE[initial_chapter][0]
-        # Mark navigation as processed to prevent infinite loops
-        st.session_state[navigation_key] = True
         # Rerun to apply initial selection immediately
         st.rerun()
 
